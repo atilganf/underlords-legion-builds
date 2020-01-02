@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  div {
+    margin: 20px;
+    border-radius: 5px;
+    background-color: burlywood;
+    padding-bottom: 20px;
+    position: relative;
+    h2{
+      color: white;
+      padding: 0;
+      background-color: brown;
+      margin: 0;
+      border-radius: 5px 5px 0 0;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 1em;
+    }
+  }
+}

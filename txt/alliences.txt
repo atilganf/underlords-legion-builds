@@ -1,0 +1,2 @@
+let alli2 = ["Blood-Bound", "Brawny", "Brute", "Deadeye", "Dragon", "Druid", "Heartless", "Human", "Insect", "Inventor", "Knight", "Primordial", "Savage", "Scaled", "Scrappy", "Troll", "Warlock"]
+let alli3 = ["Assassin", "Healer", "Hunter", "Mage", "Spirit", "Warrior"]
