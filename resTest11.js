@@ -1,463 +1,165 @@
-
-let res = [
-  [11, "Legion Commander", "Axe", "Batrider", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Lifestealer", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Batrider", "Enchantress", "Shadow Shaman", "Warlock", "Ogre Magi", "Omniknight", "Shadow Fiend", "Bristleback"],
-  [11, "Legion Commander", "Axe", "Batrider", "Shadow Demon", "Shadow Shaman", "Venomancer", "Lifestealer", "Lone Druid", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Batrider", "Venomancer", "Clockwerk", "Timbersaw", "Witch Doctor", "Bristleback", "Doom", "Sven"],
-  [11, "Legion Commander", "Axe", "Batrider", "Venomancer", "Clockwerk", "Witch Doctor", "Tinker", "Bristleback", "Doom", "Sven"],
-  [11, "Legion Commander", "Axe", "Batrider", "Venomancer", "Timbersaw", "Witch Doctor", "Tinker", "Bristleback", "Doom", "Sven"],
-  [11, "Legion Commander", "Axe", "Bloodseeker", "Venomancer", "Chaos Knight", "Ogre Magi", "Sniper", "Alchemist", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Bloodseeker", "Warlock", "Weaver", "Broodmother", "Lycan", "Sniper", "Bristleback", "Doom"],
-  [11, "Legion Commander", "Axe", "Bloodseeker", "Warlock", "Weaver", "Lycan", "Sniper", "Doom", "Sand King", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Bloodseeker", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Shadow Fiend", "Sniper", "Bristleback"],
-  [11, "Legion Commander", "Axe", "Bloodseeker", "Ogre Magi", "Weaver", "Lycan", "Shadow Fiend", "Sniper", "Sand King", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Shadow Demon", "Venomancer", "Omniknight", "Treant Protector", "Necrophos", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Shadow Demon", "Warlock", "Ogre Magi", "Abaddon", "Omniknight", "Lone Druid", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Sven"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Shadow Shaman", "Venomancer", "Dazzle", "Omniknight", "Doom", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Shadow Shaman", "Warlock", "Chaos Knight", "Ogre Magi", "Witch Doctor", "Omniknight", "Bristleback"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Venomancer", "Chaos Knight", "Clockwerk", "Timbersaw", "Treant Protector", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Venomancer", "Chaos Knight", "Clockwerk", "Tinker", "Treant Protector", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Enchantress", "Venomancer", "Chaos Knight", "Timbersaw", "Tinker", "Treant Protector", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Razor", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Morphling", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Shadow Demon", "Shadow Shaman", "Venomancer", "Witch Doctor", "Abaddon", "Treant Protector", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Bristleback", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Axe", "Snapfire", "Venomancer", "Clockwerk", "Alchemist", "Bristleback", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Axe", "Snapfire", "Venomancer", "Timbersaw", "Alchemist", "Bristleback", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Axe", "Snapfire", "Venomancer", "Tinker", "Alchemist", "Bristleback", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Timbersaw", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Tinker", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Timbersaw", "Tinker", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Chaos Knight", "Clockwerk", "Timbersaw", "Treant Protector", "Lone Druid", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Chaos Knight", "Clockwerk", "Tinker", "Treant Protector", "Lone Druid", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Chaos Knight", "Timbersaw", "Tinker", "Treant Protector", "Lone Druid", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Clockwerk", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Clockwerk", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Clockwerk", "Lycan", "Sniper", "Doom", "Disruptor", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Timbersaw", "Lycan", "Sniper", "Doom", "Disruptor", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Axe", "Venomancer", "Lycan", "Sniper", "Tinker", "Doom", "Disruptor", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Venomancer", "Warlock", "Weaver", "Sniper", "Terrorblade", "Sand King", "Sven"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Venomancer", "Weaver", "Witch Doctor", "Sniper", "Terrorblade", "Sand King", "Sven"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Warlock", "Chaos Knight", "Weaver", "Witch Doctor", "Lycan", "Sniper", "Sand King"],
-  [11, "Legion Commander", "Batrider", "Bloodseeker", "Warlock", "Dazzle", "Weaver", "Broodmother", "Omniknight", "Sniper", "Terrorblade"],
-  [11, "Legion Commander", "Batrider", "Drow Ranger", "Shadow Demon", "Venomancer", "Weaver", "Witch Doctor", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Omniknight"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Lifestealer", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Dazzle", "Lifestealer", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Demon", "Warlock", "Ogre Magi", "Witch Doctor", "Lifestealer", "Omniknight", "Lone Druid"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Slardar", "Omniknight", "Doom"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Doom", "Slark"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Doom", "Medusa"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Lifestealer", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Clockwerk", "Shadow Fiend", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Timbersaw", "Shadow Fiend", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Weaver", "Broodmother", "Sniper", "Terrorblade", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Venomancer", "Shadow Fiend", "Sniper", "Tinker", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Warlock", "Ogre Magi", "Broodmother", "Omniknight", "Doom", "Sand King"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Shadow Shaman", "Warlock", "Ogre Magi", "Omniknight", "Bristleback", "Doom", "Disruptor"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Queen of Pain", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Io", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Shadow Fiend", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Terrorblade", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Doom", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Clockwerk", "Timbersaw", "Witch Doctor", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Clockwerk", "Witch Doctor", "Tinker", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Dazzle", "Lifestealer", "Shadow Fiend", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Batrider", "Enchantress", "Venomancer", "Timbersaw", "Witch Doctor", "Tinker", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Batrider", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Shadow Demon", "Shadow Shaman", "Venomancer", "Broodmother", "Lifestealer", "Treant Protector", "Sand King", "Sven"],
-  [11, "Legion Commander", "Batrider", "Shadow Demon", "Shadow Shaman", "Venomancer", "Lifestealer", "Treant Protector", "Bristleback", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Batrider", "Shadow Shaman", "Venomancer", "Clockwerk", "Shadow Fiend", "Sniper", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Shadow Shaman", "Venomancer", "Timbersaw", "Shadow Fiend", "Sniper", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Shadow Shaman", "Venomancer", "Weaver", "Broodmother", "Sniper", "Terrorblade", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Shadow Shaman", "Venomancer", "Weaver", "Treant Protector", "Alchemist", "Doom", "Sand King", "Sven"],
-  [11, "Legion Commander", "Batrider", "Shadow Shaman", "Venomancer", "Shadow Fiend", "Sniper", "Tinker", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Snapfire", "Weaver", "Witch Doctor", "Broodmother", "Sniper", "Terrorblade", "Dragon Knight", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Chaos Knight", "Clockwerk", "Witch Doctor", "Lycan", "Sniper", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Chaos Knight", "Timbersaw", "Witch Doctor", "Lycan", "Sniper", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Chaos Knight", "Witch Doctor", "Lycan", "Sniper", "Tinker", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Clockwerk", "Timbersaw", "Witch Doctor", "Treant Protector", "Doom", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Clockwerk", "Witch Doctor", "Lycan", "Sniper", "Terrorblade", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Clockwerk", "Witch Doctor", "Tinker", "Treant Protector", "Doom", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Timbersaw", "Witch Doctor", "Lycan", "Sniper", "Terrorblade", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Timbersaw", "Witch Doctor", "Tinker", "Treant Protector", "Doom", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Weaver", "Witch Doctor", "Sniper", "Terrorblade", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Batrider", "Venomancer", "Witch Doctor", "Lycan", "Sniper", "Terrorblade", "Tinker", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Drow Ranger", "Shadow Demon", "Venomancer", "Warlock", "Weaver", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Drow Ranger", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Drow Ranger", "Venomancer", "Warlock", "Weaver", "Abaddon", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Drow Ranger", "Venomancer", "Weaver", "Abaddon", "Shadow Fiend", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Drow Ranger", "Warlock", "Chaos Knight", "Weaver", "Broodmother", "Omniknight", "Sniper", "Necrophos"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Abaddon", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Lifestealer", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Demon", "Warlock", "Weaver", "Broodmother", "Lycan", "Sniper", "Necrophos"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Demon", "Warlock", "Abaddon", "Omniknight", "Sniper", "Alchemist", "Lone Druid"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Shaman", "Warlock", "Dazzle", "Weaver", "Broodmother", "Lycan", "Sniper"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Shaman", "Warlock", "Dazzle", "Weaver", "Lycan", "Shadow Fiend", "Sniper"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Shadow Shaman", "Warlock", "Dazzle", "Lycan", "Sniper", "Terrorblade", "Alchemist"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Snapfire", "Warlock", "Omniknight", "Shadow Fiend", "Dragon Knight", "Lone Druid", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Omniknight", "Sniper", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Lifestealer", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Weaver", "Omniknight", "Sniper", "Terrorblade", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Abaddon", "Treant Protector", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Omniknight", "Sniper", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Warlock", "Omniknight", "Treant Protector", "Doom", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Venomancer", "Chaos Knight", "Ogre Magi", "Sniper", "Treant Protector", "Alchemist", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Chaos Knight", "Clockwerk", "Omniknight", "Alchemist", "Lone Druid", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Chaos Knight", "Timbersaw", "Omniknight", "Alchemist", "Lone Druid", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Omniknight", "Sniper"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Chaos Knight", "Weaver", "Broodmother", "Omniknight", "Sniper", "Lone Druid"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Chaos Knight", "Omniknight", "Tinker", "Alchemist", "Lone Druid", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Weaver", "Broodmother", "Lycan", "Sniper", "Treant Protector", "Doom"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Warlock", "Weaver", "Broodmother", "Omniknight", "Sniper", "Terrorblade", "Lone Druid"],
-  [11, "Legion Commander", "Bloodseeker", "Enchantress", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Shadow Fiend", "Sniper", "Treant Protector"],
-  [11, "Legion Commander", "Bloodseeker", "Nyx Assassin", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Lycan", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Nyx Assassin", "Venomancer", "Warlock", "Queen of Pain", "Weaver", "Lycan", "Sniper", "Slark"],
-  [11, "Legion Commander", "Bloodseeker", "Razor", "Ogre Magi", "Weaver", "Lycan", "Morphling", "Sniper", "Doom", "Sand King"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Venomancer", "Warlock", "Weaver", "Abaddon", "Lycan", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Venomancer", "Warlock", "Weaver", "Abaddon", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Venomancer", "Ogre Magi", "Weaver", "Broodmother", "Lifestealer", "Lycan", "Sniper"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Venomancer", "Ogre Magi", "Lifestealer", "Lycan", "Sniper", "Alchemist", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Venomancer", "Weaver", "Abaddon", "Broodmother", "Lycan", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Shadow Demon", "Warlock", "Weaver", "Abaddon", "Broodmother", "Sniper", "Sven", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Beastmaster", "Chaos Knight", "Weaver", "Sniper", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Beastmaster", "Chaos Knight", "Weaver", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Weaver", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Timbersaw", "Weaver", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Lycan", "Sniper", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Omniknight", "Sniper", "Sand King", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Sniper", "Terrorblade", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Sniper", "Dragon Knight", "Sand King", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Sniper", "Sand King", "Sven", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Chaos Knight", "Weaver", "Tinker", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Weaver", "Abaddon", "Sniper", "Terrorblade", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Weaver", "Omniknight", "Sniper", "Terrorblade", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Warlock", "Weaver", "Sniper", "Terrorblade", "Dragon Knight", "Sand King", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Beastmaster", "Chaos Knight", "Weaver", "Broodmother", "Sniper", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Beastmaster", "Chaos Knight", "Weaver", "Sniper", "Sand King", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Chaos Knight", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Sniper", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Chaos Knight", "Ogre Magi", "Sniper", "Treant Protector", "Alchemist", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Ogre Magi", "Slardar", "Weaver", "Broodmother", "Lycan", "Sniper", "Doom"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Sniper", "Doom", "Slark"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Sniper", "Doom", "Sven"],
-  [11, "Legion Commander", "Bloodseeker", "Venomancer", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Sniper", "Doom", "Medusa"],
-  [11, "Legion Commander", "Bloodseeker", "Warlock", "Weaver", "Abaddon", "Broodmother", "Omniknight", "Sniper", "Terrorblade", "Necrophos"],
-  [11, "Legion Commander", "Bloodseeker", "Warlock", "Weaver", "Broodmother", "Lycan", "Sniper", "Treant Protector", "Doom", "Lone Druid"],
-  [11, "Legion Commander", "Bloodseeker", "Chaos Knight", "Ogre Magi", "Weaver", "Abaddon", "Lifestealer", "Lycan", "Sniper", "Sand King"],
-  [11, "Legion Commander", "Bloodseeker", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Shadow Fiend", "Sniper", "Treant Protector", "Lone Druid"],
-  [11, "Legion Commander", "Bloodseeker", "Ogre Magi", "Weaver", "Broodmother", "Lycan", "Sniper", "Bristleback", "Doom", "Disruptor"],
-  [11, "Legion Commander", "Drow Ranger", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Drow Ranger", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Drow Ranger", "Snapfire", "Weaver", "Abaddon", "Broodmother", "Shadow Fiend", "Sniper", "Dragon Knight", "Gyrocopter"],
-  [11, "Legion Commander", "Drow Ranger", "Venomancer", "Clockwerk", "Abaddon", "Lycan", "Shadow Fiend", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Drow Ranger", "Venomancer", "Timbersaw", "Abaddon", "Lycan", "Shadow Fiend", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Drow Ranger", "Venomancer", "Weaver", "Abaddon", "Shadow Fiend", "Sniper", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Drow Ranger", "Venomancer", "Abaddon", "Lycan", "Shadow Fiend", "Sniper", "Tinker", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Enchantress", "Razor", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Morphling", "Omniknight", "Treant Protector"],
-  [11, "Legion Commander", "Enchantress", "Razor", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Morphling", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Razor", "Venomancer", "Warlock", "Ogre Magi", "Io", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Razor", "Venomancer", "Warlock", "Ogre Magi", "Morphling", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Razor", "Venomancer", "Warlock", "Ogre Magi", "Morphling", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Abaddon", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Lifestealer", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Omniknight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Clockwerk", "Timbersaw", "Witch Doctor", "Abaddon", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Clockwerk", "Witch Doctor", "Abaddon", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Shadow Shaman", "Venomancer", "Timbersaw", "Witch Doctor", "Abaddon", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Abaddon", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Pudge", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Slardar", "Abaddon", "Omniknight", "Treant Protector"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Omniknight", "Treant Protector", "Slark"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Omniknight", "Treant Protector", "Medusa"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Io", "Lifestealer", "Omniknight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Lifestealer", "Omniknight", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Treant Protector", "Sven", "Lich"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Treant Protector", "Dragon Knight", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Venomancer", "Dazzle", "Witch Doctor", "Lifestealer", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Warlock", "Ogre Magi", "Abaddon", "Broodmother", "Omniknight", "Treant Protector", "Sand King"],
-  [11, "Legion Commander", "Enchantress", "Shadow Demon", "Warlock", "Ogre Magi", "Abaddon", "Omniknight", "Treant Protector", "Bristleback", "Disruptor"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Dazzle", "Timbersaw", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Dazzle", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Lifestealer", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Timbersaw", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Lifestealer", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Abaddon", "Lifestealer", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Abaddon", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Abaddon", "Lifestealer", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Witch Doctor", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Doom", "Sven", "Troll Warlord"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Chaos Knight", "Clockwerk", "Witch Doctor", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Chaos Knight", "Timbersaw", "Witch Doctor", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Chaos Knight", "Witch Doctor", "Sniper", "Tinker", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Clockwerk", "Dazzle", "Timbersaw", "Omniknight", "Shadow Fiend", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Clockwerk", "Dazzle", "Omniknight", "Shadow Fiend", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Dazzle", "Timbersaw", "Omniknight", "Shadow Fiend", "Tinker", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Shadow Shaman", "Venomancer", "Witch Doctor", "Lifestealer", "Omniknight", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Snapfire", "Venomancer", "Clockwerk", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Snapfire", "Venomancer", "Timbersaw", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Snapfire", "Venomancer", "Tinker", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Tiny", "Venomancer", "Warlock", "Ogre Magi", "Io", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Timbersaw", "Omniknight", "Treant Protector"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Timbersaw", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Omniknight", "Tinker", "Treant Protector"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Witch Doctor", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Dazzle", "Ogre Magi", "Treant Protector", "Sven", "Troll Warlord"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Pudge", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Timbersaw", "Omniknight", "Tinker", "Treant Protector"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Timbersaw", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Abaddon", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Io", "Lifestealer", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Lifestealer", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Lifestealer", "Lone Druid", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Treant Protector", "Necrophos", "Sven", "Lich"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Ogre Magi", "Timbersaw", "Omniknight", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Ogre Magi", "Timbersaw", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Ogre Magi", "Omniknight", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Ogre Magi", "Omniknight", "Tinker", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Timbersaw", "Omniknight", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Clockwerk", "Omniknight", "Tinker", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Queen of Pain", "Abaddon", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Timbersaw", "Omniknight", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Timbersaw", "Omniknight", "Tinker", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Io", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Shadow Fiend", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Terrorblade", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Treant Protector", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Abaddon", "Doom", "Lone Druid", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Io", "Morphling", "Omniknight", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Ogre Magi", "Io", "Omniknight", "Doom", "Sven", "Faceless Void"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Warlock", "Timbersaw", "Omniknight", "Tinker", "Treant Protector", "Doom", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Chaos Knight", "Dazzle", "Witch Doctor", "Lifestealer", "Treant Protector", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Clockwerk", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Clockwerk", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Dazzle", "Witch Doctor", "Abaddon", "Treant Protector", "Doom", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Venomancer", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Treant Protector", "Sven"],
-  [11, "Legion Commander", "Enchantress", "Warlock", "Chaos Knight", "Ogre Magi", "Weaver", "Omniknight", "Treant Protector", "Alchemist", "Sand King"],
-  [11, "Legion Commander", "Razor", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Morphling", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Shadow Shaman", "Venomancer", "Clockwerk", "Timbersaw", "Witch Doctor", "Abaddon", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Shadow Shaman", "Venomancer", "Clockwerk", "Witch Doctor", "Abaddon", "Tinker", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Shadow Shaman", "Venomancer", "Timbersaw", "Witch Doctor", "Abaddon", "Tinker", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Snapfire", "Weaver", "Abaddon", "Lycan", "Sniper", "Dragon Knight", "Sand King", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Warlock", "Ogre Magi", "Omniknight", "Treant Protector", "Lone Druid", "Necrophos", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Beastmaster", "Weaver", "Abaddon", "Broodmother", "Sniper", "Bristleback", "Sven"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Beastmaster", "Weaver", "Abaddon", "Sniper", "Sand King", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Clockwerk", "Abaddon", "Broodmother", "Sniper", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Clockwerk", "Abaddon", "Sniper", "Bristleback", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Timbersaw", "Abaddon", "Broodmother", "Sniper", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Timbersaw", "Abaddon", "Sniper", "Bristleback", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Weaver", "Abaddon", "Broodmother", "Lycan", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Abaddon", "Broodmother", "Sniper", "Tinker", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Demon", "Venomancer", "Abaddon", "Sniper", "Tinker", "Bristleback", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Shaman", "Venomancer", "Warlock", "Dazzle", "Ogre Magi", "Omniknight", "Doom", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Shadow Shaman", "Venomancer", "Chaos Knight", "Clockwerk", "Witch Doctor", "Sniper", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Shaman", "Venomancer", "Chaos Knight", "Timbersaw", "Witch Doctor", "Sniper", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Shadow Shaman", "Venomancer", "Chaos Knight", "Witch Doctor", "Sniper", "Tinker", "Lone Druid", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Clockwerk", "Weaver", "Broodmother", "Lycan", "Dragon Knight", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Timbersaw", "Weaver", "Broodmother", "Lycan", "Dragon Knight", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Sniper", "Dragon Knight", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Tinker", "Dragon Knight", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Weaver", "Broodmother", "Sniper", "Dragon Knight", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Weaver", "Sniper", "Dragon Knight", "Sand King", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Chaos Knight", "Lycan", "Sniper", "Alchemist", "Dragon Knight", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Clockwerk", "Weaver", "Broodmother", "Lycan", "Terrorblade", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Clockwerk", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Timbersaw", "Weaver", "Broodmother", "Lycan", "Terrorblade", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Timbersaw", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Broodmother", "Lycan", "Sniper", "Dragon Knight", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Broodmother", "Lycan", "Terrorblade", "Tinker", "Dragon Knight", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Broodmother", "Sniper", "Terrorblade", "Dragon Knight", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Lycan", "Shadow Fiend", "Sniper", "Dragon Knight", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Shadow Fiend", "Sniper", "Dragon Knight", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Shadow Fiend", "Sniper", "Dragon Knight", "Sand King", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Weaver", "Sniper", "Terrorblade", "Dragon Knight", "Sand King", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Lycan", "Sniper", "Terrorblade", "Alchemist", "Dragon Knight", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Venomancer", "Tinker", "Treant Protector", "Alchemist", "Doom", "Dragon Knight", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Snapfire", "Beastmaster", "Chaos Knight", "Weaver", "Broodmother", "Sniper", "Dragon Knight", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Beastmaster", "Chaos Knight", "Weaver", "Sniper", "Bristleback", "Dragon Knight", "Sand King", "Gyrocopter"],
-  [11, "Legion Commander", "Snapfire", "Weaver", "Broodmother", "Shadow Fiend", "Sniper", "Dragon Knight", "Sven", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Timbersaw", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Chaos Knight", "Clockwerk", "Ogre Magi", "Tinker", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Chaos Knight", "Ogre Magi", "Timbersaw", "Tinker", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Clockwerk", "Ogre Magi", "Lycan", "Sniper", "Doom", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Ogre Magi", "Timbersaw", "Lycan", "Sniper", "Doom", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Venomancer", "Warlock", "Ogre Magi", "Lycan", "Sniper", "Tinker", "Doom", "Gyrocopter", "Medusa"],
-  [11, "Legion Commander", "Venomancer", "Beastmaster", "Chaos Knight", "Clockwerk", "Lycan", "Sniper", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Beastmaster", "Chaos Knight", "Timbersaw", "Lycan", "Sniper", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Beastmaster", "Chaos Knight", "Weaver", "Broodmother", "Sniper", "Bristleback", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Beastmaster", "Chaos Knight", "Weaver", "Sniper", "Sand King", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Beastmaster", "Chaos Knight", "Lycan", "Sniper", "Tinker", "Sven", "Disruptor", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Chaos Knight", "Clockwerk", "Weaver", "Broodmother", "Lycan", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Chaos Knight", "Timbersaw", "Weaver", "Broodmother", "Lycan", "Sniper", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Chaos Knight", "Weaver", "Broodmother", "Lycan", "Sniper", "Tinker", "Sven", "Gyrocopter"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Timbersaw", "Abaddon", "Broodmother", "Lifestealer", "Doom", "Sand King", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Timbersaw", "Abaddon", "Lifestealer", "Bristleback", "Doom", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Abaddon", "Broodmother", "Lifestealer", "Tinker", "Doom", "Sand King", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Clockwerk", "Abaddon", "Lifestealer", "Tinker", "Bristleback", "Doom", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Venomancer", "Timbersaw", "Abaddon", "Broodmother", "Lifestealer", "Tinker", "Doom", "Sand King", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Timbersaw", "Abaddon", "Lifestealer", "Shadow Fiend", "Tinker", "Treant Protector", "Lone Druid", "Sven"],
-  [11, "Legion Commander", "Venomancer", "Timbersaw", "Abaddon", "Lifestealer", "Tinker", "Bristleback", "Doom", "Sven", "Disruptor"],
-  [11, "Legion Commander", "Venomancer", "Weaver", "Abaddon", "Broodmother", "Lifestealer", "Lycan", "Sniper", "Doom", "Sven"]
-];
 let heroes = [
-  ["Axe", "Brawny", "Brute", 1],
-  ["Batrider", "Troll", "Knight", 1],
-  ["Bloodseeker", "Blood-Bound", "Deadeye", 1],
-  ["Bounty Hunter", "Scrappy", "Assassin", 1],
-  ["Drow Ranger", "Heartless", "Hunter", 1],
-  ["Enchantress", "Savage", "Druid", "Healer", 1],
-  ["Nyx Assassin", "Insect", "Assassin", 1],
-  ["Razor", "Primordial", "Mage", 1],
-  ["Shadow Demon", "Heartless", "Demon", 1],
-  ["Shadow Shaman", "Troll", "Druid", 1],
-  ["Snapfire", "Dragon", "Inventor", 1],
-  ["Tiny", "Primordial", "Warrior", 1],
-  ["Tusk", "Savage", "Warrior", 1],
-  ["Venomancer", "Savage", "Warlock", "Scaled", 1],
-  ["Warlock", "Blood-Bound", "Warlock", "Healer", 1],
-  ["Beastmaster", "Brawny", "Hunter", 2],
-  ["Chaos Knight", "Demon", "Knight", 2],
-  ["Clockwerk", "Scrappy", "Inventor", 2],
-  ["Crystal Maiden", "Human", "Mage", 2],
-  ["Dazzle", "Troll", "Healer", 2],
-  ["Ember Spirit", "Spirit", "Assassin", 2],
-  ["Legion Commander", "Human", "Champion", 2],
-  ["Ogre Magi", "Blood-Bound", "Brute", "Mage", 2],
-  ["Pudge", "Heartless", "Warrior", 2],
-  ["Queen of Pain", "Demon", "Assassin", 2],
-  ["Slardar", "Scaled", "Warrior", 2],
-  ["Storm Spirit", "Spirit", "Mage", 2],
-  ["Timbersaw", "Scrappy", "Inventor", 2],
-  ["Weaver", "Scrappy", "Insect", "Hunter", 2],
-  ["Witch Doctor", "Troll", "Warlock", 2],
-  ["Abaddon", "Heartless", "Knight", 3],
-  ["Broodmother", "Insect", "Warlock", 3],
-  ["Earth Spirit", "Spirit", "Warrior", 3],
-  ["Io", "Primordial", "Druid", 3],
-  ["Juggernaut", "Brawny", "Warrior", 3],
-  ["Lifestealer", "Heartless", "Brute", 3],
-  ["Lycan", "Human", "Savage", "Hunter", 3],
-  ["Morphling", "Primordial", "Mage", 3],
-  ["Omniknight", "Human", "Knight", "Healer", 3],
-  ["Shadow Fiend", "Demon", "Warlock", 3],
-  ["Sniper", "Scrappy", "Deadeye", "Hunter", 3],
-  ["Terrorblade", "Demon", "Hunter", 3],
-  ["Tinker", "Scrappy", "Inventor", 3],
-  ["Treant Protector", "Druid", "Brute", 3],
-  ["Viper", "Dragon", "Assassin", 3],
-  ["Alchemist", "Scrappy", "Warlock", 4],
-  ["Bristleback", "Brawny", "Savage", 4],
-  ["Doom", "Demon", "Brute", 4],
-  ["Dragon Knight", "Human", "Dragon", "Knight", 4],
-  ["Keeper of the Light", "Human", "Mage", 4],
-  ["Kunkka", "Human", "Warrior", 4],
-  ["Lone Druid", "Savage", "Druid", 4],
-  ["Necrophos", "Heartless", "Healer", 4],
-  ["Sand King", "Savage", "Insect", 4],
-  ["Slark", "Scaled", "Assassin", 4],
-  ["Sven", "Human", "Scaled", "Knight", 4],
-  ["Disruptor", "Brawny", "Warlock", 5],
-  ["Faceless Void", "Primordial", "Assassin", 5],
-  ["Gyrocopter", "Deadeye", "Inventor", 5],
-  ["Lich", "Heartless", "Mage", 5],
-  ["Medusa", "Scaled", "Hunter", 5],
-  ["Troll Warlord", "Troll", "Warrior", 5],
-  ["Void Spirit", "Spirit", "Warlock", 5]
+    ['Abaddon', 'Heartless', 'Knight', 3],
+    ["Arc Warden", "Primordial", "Summoner", 1],
+    ['Axe', 'Brawny', 'Brute', 5],
+    ['Batrider', 'Troll', 'Knight', 1],
+    ['Beastmaster', 'Brawny', 'Hunter', 2],
+    ['Bloodseeker', 'Blood-Bound', 'Deadeye', 1],
+    ['Bristleback', 'Brawny', 'Savage', 2],
+    ['Broodmother', 'Insect', 'Warlock', 3],
+    ['Chaos Knight', 'Demon', 'Knight', 2],
+    ['Crystal Maiden', 'Human', 'Mage', 1],
+    ['Dazzle', 'Troll', 'Healer', 2],
+    ['Disruptor', 'Brawny', 'Warlock', 4],
+    ['Doom', 'Demon', 'Brute', 4],
+    ['Dragon Knight', 'Human', 'Dragon', 'Knight', 5],
+    ['Drow Ranger', 'Heartless', "Vigilant", 'Hunter', 1],
+    ['Earth Spirit', 'Spirit', 'Warrior', 3],
+    ['Ember Spirit', 'Spirit', 'Assassin', 2],
+    ["Enigma", "Void", "Primordial", 3],
+    ['Faceless Void', 'Void', 'Assassin', 5],
+    ['Io', 'Primordial', 'Druid', 3],
+    ['Juggernaut', 'Brawny', 'Warrior', 3],
+    ['Keeper of the Light', 'Human', 'Mage', 4],
+    //['Kunkka', 'Human', 'Warrior', 4],
+    ['Legion Commander', 'Human', 'Champion', 2],
+    ['Lich', 'Heartless', 'Mage', 5],
+    ['Lifestealer', 'Heartless', 'Brute', 3],
+    ['Lone Druid', 'Savage', 'Druid', "Summoner", 4],
+    ["Luna", "Vigilant", "Knight", 2],
+    ['Lycan', 'Human', 'Savage', 'Summoner', 3],
+    ["Magnus", "Savage", "Druid", 1],
+    ['Medusa', 'Scaled', 'Hunter', 5],
+    ["Mirana", "Vigilant", "Hunter", 4],
+    ['Morphling', 'Primordial', 'Mage', 3],
+    ["Natures Prophet", "Druid", "Summoner", 2],
+    ['Necrophos', 'Heartless', "Warlock", 'Healer', 4],
+    ['Nyx Assassin', 'Insect', 'Assassin', 1],
+    ['Ogre Magi', 'Blood-Bound', 'Brute', 'Mage', 2],
+    ['Omniknight', 'Human', 'Knight', 'Healer', 3],
+    ['Pudge', 'Heartless', 'Warrior', 2],
+    ['Queen of Pain', 'Demon', 'Assassin', 2],
+    ['Razor', 'Primordial', 'Mage', 1],
+    ['Sand King', 'Savage', 'Insect', 5],
+    ['Shadow Demon', 'Heartless', 'Demon', 1],
+    ['Shadow Fiend', 'Demon', 'Warlock', 3],
+    ['Shadow Shaman', 'Troll', 'Summoner', 1],
+    ['Slardar', 'Scaled', 'Warrior', 2],
+    ['Slark', 'Scaled', 'Assassin', 4],
+    ['Snapfire', 'Dragon', 'Brawny', 1],
+    // ['Sniper', 'Scrappy', 'Deadeye', 'Hunter', 3],
+    ['Storm Spirit', 'Spirit', 'Mage', 2],
+    ['Sven', 'Human', 'Scaled', 'Knight', 4],
+    ["Templar Assassin", "Vigilant", "Void", "Assassin", 4],
+    ['Terrorblade', 'Demon', 'Hunter', 3],
+    ["Tidehunter", "Scaled", "Warrior", 4],
+    // ['Timbersaw', 'Scrappy', 'Inventor', 2],
+    // ['Tinker', 'Scrappy', 'Inventor', 3],
+    ['Tiny', 'Primordial', 'Warrior', 1],
+    ['Treant Protector', 'Druid', 'Brute', 3],
+    ['Troll Warlord', 'Troll', 'Warrior', 5],
+    ['Tusk', 'Savage', 'Warrior', 1],
+    ['Venomancer', 'Summoner', 'Scaled', 1],
+    ['Viper', 'Dragon', 'Assassin', 3],
+    ['Void Spirit', 'Spirit', 'Void', 4],
+    ['Warlock', 'Blood-Bound', 'Warlock', 'Healer', 1],
+    ['Weaver', 'Insect', 'Hunter', 1],
+    ["Windranger", "Vigilant", "Hunter", 2],
+    ['Witch Doctor', 'Troll', 'Warlock', 2]
 ];
-res = data;
-let alli2 = ["Blood-Bound", "Brawny", "Brute", "Deadeye", "Dragon", "Druid", "Heartless", "Human", "Insect", "Inventor", "Knight", "Primordial", "Savage", "Scaled", "Scrappy", "Troll", "Warlock"];
-let alli3 = ["Assassin", "Healer", "Hunter", "Mage", "Spirit", "Warrior"];
-let allAlli = ["Blood-Bound", "Brawny", "Brute", "Deadeye", "Dragon", "Druid", "Heartless", "Human", "Insect", "Inventor", "Knight", "Primordial", "Savage", "Scaled", "Scrappy", "Troll", "Warlock", "Assassin", "Healer", "Hunter", "Mage", "Spirit", "Warrior", "Demon", "Champion"];
 
-res = res.map(t => t.slice(1));
-res = res.map(t => { t = t.map(rh => heroes.find(h => h[0] == rh)); return t })
+let alli1 = ["Deadeye", "Demon"];
+let alli2 = ["Blood-Bound", "Brawny", "Brute", "Dragon", "Druid", "Healer", "Heartless", "Human", "Insect", "Knight",
+    "Primordial", "Savage", "Scaled", "Summoner", "Troll", "Vigilant", "Warlock"];
+let alli3 = ["Assassin", "Hunter", "Mage", "Spirit", "Void", "Warrior"];
+let allAlli = [...alli1, ...alli2, ...alli3, "Champion"];
 
-let newRes = res
+
+// res = res.map(t => t.slice(1));
+// res = res.map(t => { t = t.map(rh => heroes.find(h => h[0] == rh)); return t })
+
+// let newRes = res
 
 function tierTotalLess(arr, tierTotal) {
-  return arr.filter(t => {
-    let n = 0;
-    t.map(h => n += h[h.length - 1]);
-    if (n < tierTotal)
-      return t
-  })
+    return arr.filter(t => {
+        let n = 0;
+        t.map(h => n += h[h.length - 1]);
+        if (n < tierTotal)
+            return t
+    })
 }
 
 function checkBuilds(arr, allience, number) {
-  return arr.filter(t => {
-    let n = 0;
-    t.map(h => h.slice(1).map(e => {
-      if (e == allience) { n++ }
-    }));
-    if (number == 0) {
-      if (n < 2)
-        return t
-    } else if (n > number - 1)
-      return t
-  })
+    return arr.filter(t => {
+        let n = 0;
+        t.map(h => h.slice(1).map(e => {
+            if (e == allience) { n++ }
+        }));
+        if (number == 0) {
+            if (n < 2)
+                return t
+        } else if (n > number - 1)
+            return t
+    })
 }
 
 function log(arr) {
-  console.log(arr.map(t => t.map(h => h[0])));
+    console.log(arr.map(t => t.map(h => h[0])));
 }
 
 
 function bestofSix(arr) {
-  return arr.map(t => {
-    let filtTeam = t.filter(h => h[h.length - 1] < 4)
-    let sixTeams = [];
-    if (filtTeam.length > 5) {
-      //TODO
-    }
-    return filtTeam;
-  })
+    return arr.map(t => {
+        let filtTeam = t.filter(h => h[h.length - 1] < 4)
+        let sixTeams = [];
+        if (filtTeam.length > 5) {
+            //TODO
+        }
+        return filtTeam;
+    })
 }
 function checkHero(arr, hero) {
-  hero = heroes.find(h => h[0] == hero);
-  return arr.filter(t => t.includes(hero)
-  )
+    hero = heroes.find(h => h[0] == hero);
+    return arr.filter(t => t.includes(hero)
+    )
 }
+function multiArrayNameSort(arr) {
+    return arr.sort((a, b) => {
+        if (a[0] === b[0]) {
+            return 0;
+        } else {
+            return (a[0] < b[0]) ? -1 : 1;
+        }
+    });
+}
+function heroesToNumberArr() {
+    let res = [...heroes];
+    for (let i = 0; i < heroes.length; i++) {
+        res[i].pop();
+        for (let j = 0; j < allAlli.length; j++) {
+            for (let k = 1; k < res[i].length; k++) {
+                if(res[i][k] == allAlli[j]){
+                    res[i][k] = j;
+                }
+            }
+        }
+    }
+    return res;
+}
+console.log(heroesToNumberArr());
+
 //underlords.app/build otomatik build oluşturma kodu
 if (false) {
-  let arr =
-    ["Legion Commander", "Axe", "Shadow Demon", "Venomancer", "Beastmaster", "Chaos Knight", "Lifestealer", "Bristleback", "Sven", "Disruptor"]
-  let spans = document.querySelectorAll("span")
-  let fn = 0;
-  for (let i = 0; i < spans.length; i++) {
-    for (let j = fn; j < arr.length; j++) {
-      if (spans[i].innerText == arr[j]) {
-        spans[i].click()
-        fn++;
-      }
+    let arr =
+        ["Legion Commander", "Axe", "Shadow Demon", "Venomancer", "Beastmaster", "Chaos Knight", "Lifestealer", "Bristleback", "Sven", "Disruptor"]
+    let spans = document.querySelectorAll("span")
+    let fn = 0;
+    for (let i = 0; i < spans.length; i++) {
+        for (let j = fn; j < arr.length; j++) {
+            if (spans[i].innerText == arr[j]) {
+                spans[i].click()
+                fn++;
+            }
+        }
     }
-  }
 }
